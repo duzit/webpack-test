@@ -13,7 +13,8 @@ module.exports = {
   plugins: [
     new htmlWebpackPlugin({
       template: 'index.html',
-      filename: 'index-[hash].html',
+      // [hash:5] 5位 hash 值
+      filename: 'index-[hash:5].html',
       title: 'webpack test'
     })
   ]
