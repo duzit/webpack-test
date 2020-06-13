@@ -3,10 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <title>webpack demo</title> -->
-  <title><%= htmlWebpackPlugin.options.title %></title>
+  <% if (process.env.NODE_ENV === 'development') { %>
+  <title>webpack dev</title>
+  <% } else { %>
+  <title>webpack prod</title>
+  <% } %>
 </head>
 <body>
+  <!-- 打包后的html会自动插入js文件的引入 -->
   <!-- <script src="./dist/bundle.js"></script> -->
+
+  <div class="main">
+    <h1>webpack demo</h1>
+  </div>
+  <div class="flex">
+    <h3>hello</h3>
+    <h3>moto</h3>
+    <h3>Moto</h3>
+  </div>
 </body>
 </html>
