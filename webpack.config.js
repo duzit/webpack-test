@@ -24,6 +24,25 @@ module.exports = {
           'postcss-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(png|jpeg|jpg|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-withimg-loader'
+          }
+        ]
       }
     ]
   },
@@ -33,7 +52,8 @@ module.exports = {
       // [hash:5] 5位 hash 值
       // filename: 'index-[hash:5].html',
       filename: 'index.html',
-      title: process.env.NODE_ENV === 'development' ? 'webpack dev' : 'webpack prod'
+      title: 'webpack demo',
+      minify: false
     })
   ]
 
